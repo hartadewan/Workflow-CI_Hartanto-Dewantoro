@@ -1,0 +1,14 @@
+# Local MLflow stores and CI scratch output - never committed
+mlruns/
+mlartifacts/
+ci-out/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Packaged model archives belong in GitHub Releases, not git history
+*.tar.gz
+.ruff_cache/
