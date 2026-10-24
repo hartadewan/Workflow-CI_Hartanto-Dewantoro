@@ -71,7 +71,7 @@ def train() -> None:
         )
         model.fit(X_train, y_train)
 
-        # Evaluasi ringkas
+        # Brief evaluation
         test_accuracy = model.score(X_test, y_test)
         LOGGER.info("Akurasi set uji: %.4f", test_accuracy)
 
