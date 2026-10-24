@@ -116,8 +116,6 @@ jobs:
           RUN_ID: ${{ steps.run.outputs.run_id }}
           MODEL_PATH: ${{ steps.run.outputs.model_artifact_path }}
         run: |
-          # Isolated env built only from the logged model's own requirements.txt,
-          # so the published artifact is checked independently of the training env.
           mkdir -p "${WORK_DIR}/download"
           mlflow artifacts download --run-id "${RUN_ID}" --artifact-path "${MODEL_PATH}" \
             --dst-path "${WORK_DIR}/download"
@@ -138,7 +136,6 @@ jobs:
           mkdir -p "${RELEASE_DIR}"
           tar -C "${WORK_DIR}/download" -czf "${archive}" "${MODEL_PATH}"
 
-          # Load the archive exactly as it will be published, in the isolated env.
           mkdir -p "${WORK_DIR}/extracted"
           tar -C "${WORK_DIR}/extracted" -xzf "${archive}"
           "${WORK_DIR}/model-env/bin/python" ci/verify_model.py \
@@ -162,7 +159,7 @@ jobs:
           RELEASE_TAG: ${{ steps.package.outputs.release_tag }}
           RUN_ID: ${{ steps.run.outputs.run_id }}
         run: |
-          # Draft until the Docker image is pushed; published in "Publish GitHub Release".
+
           notes="${WORK_DIR}/release-notes.md"
           {
             echo "Trained by ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} from commit ${GITHUB_SHA}."
