@@ -1,4 +1,4 @@
-# Local MLflow stores and CI scratch output - never committed
+# Local MLflow stores and CI scratch output
 mlruns/
 mlartifacts/
 ci-out/
