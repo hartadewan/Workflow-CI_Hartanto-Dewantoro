@@ -11,7 +11,7 @@ from mlflow.environment_variables import MLFLOW_RUN_ID
 from sklearn.ensemble import RandomForestClassifier
 
 # ===========
-# Konfigurasi
+# Configuration
 # ===========
 LOGGER = logging.getLogger(__name__)
 
