@@ -10,9 +10,9 @@ import pandas as pd
 from mlflow.environment_variables import MLFLOW_RUN_ID
 from sklearn.ensemble import RandomForestClassifier
 
-# ===========
+# =============
 # Configuration
-# ===========
+# =============
 LOGGER = logging.getLogger(__name__)
 
 TRACKING_URI: str = os.environ.get("MLFLOW_TRACKING_URI", "http://127.0.0.1:5000/")
