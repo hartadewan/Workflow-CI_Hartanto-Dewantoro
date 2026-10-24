@@ -15,8 +15,8 @@ and pushes a serving image built with **`mlflow models build-docker`** to
 | `MLProject` (file) | `MLProject/MLproject` | MLflow reads this name case-insensitively |
 | `modelling.py`, `conda.yaml` | `MLProject/modelling.py`, `MLProject/conda.yaml` | |
 | `namadataset_preprocessing` | `MLProject/namadataset_preprocessing/` | `train.csv`, `test.csv` (800/200 rows, 61 features + `credit_risk`) |
-| Tautan ke Docker Hub | `MLProject/DockerHub.txt` | **Replace `<DOCKERHUB_USERNAME>`** |
-| file tambahan | `ci/` | small CI helpers (env export, run lookup, model check, manifest, serving check) |
+| Link to Docker Hub | `MLProject/DockerHub.txt` | **Replace `<DOCKERHUB_USERNAME>`** |
+| additional file | `ci/` | small CI helpers (env export, run lookup, model check, manifest, serving check) |
 
 ## One-time setup
 
