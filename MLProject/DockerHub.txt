@@ -1,1 +1,0 @@
-https://hub.docker.com/repository/docker/hartadewan99/credit-scoring-model/
